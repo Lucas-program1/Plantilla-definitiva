@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
       icon: Mail,
       title: 'Email',
       content: 'info@inmoexpress.com',
-      description: 'Respuesta en menos de 2 horas'
+      description: 'Contactanos y tendrás una respuesta rápida'
     },
     {
       icon: MapPin,
