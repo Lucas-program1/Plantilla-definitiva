@@ -122,7 +122,7 @@ export const mockProperties: Property[] = [
   {
     id: '4',
     title: 'Casa Familiar con Jardín',
-    price: 380000,
+    price: 400000,
     location: 'Sevilla',
     address: 'Urbanización El Pinar, 28',
     bedrooms: 5,
