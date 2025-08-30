@@ -15,7 +15,7 @@
 //    - Añade/quita redes sociales
 
 import React from 'react';
-import { Home, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Home, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin, Clock } from 'lucide-react';
 
 const Footer: React.FC = () => {
   
