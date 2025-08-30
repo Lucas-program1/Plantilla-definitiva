@@ -14,10 +14,6 @@
 // 
 // 3. ACTUALIZAR TIPOS DE PROPIEDAD:
 //    - Modifica el array 'propertyTypes'
-//    - Sincronízalo con los tipos en 'data/properties.ts'
-
-import React, { useState } from 'react';
-import { Search, SlidersHorizontal, X } from 'lucide-react';
 
 interface Filters {
   type: string;
@@ -33,9 +29,6 @@ interface Filters {
 interface PropertyFiltersProps {
   onFiltersChange: (filters: Filters) => void;
 }
-
-const PropertyFilters: React.FC<PropertyFiltersProps> = ({ onFiltersChange }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const [filters, setFilters] = useState<Filters>({
     type: '',
     location: '',
@@ -89,12 +82,6 @@ const PropertyFilters: React.FC<PropertyFiltersProps> = ({ onFiltersChange }) =>
       bedrooms: '',
       bathrooms: '',
       minArea: '',
-      maxArea: ''
-    };
-    setFilters(clearedFilters);
-    onFiltersChange(clearedFilters);
-  };
-
   return (
     <div className="mb-8">
       {/* 🔘 BOTÓN PARA ABRIR FILTROS */}
@@ -270,24 +257,6 @@ const PropertyFilters: React.FC<PropertyFiltersProps> = ({ onFiltersChange }) =>
           </form>
         </div>
       )}
-
-      {/* 📋 GRID DE RESULTADOS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        {filteredProperties.map((property) => (
-          <PropertyCard 
-            key={property.id} 
-            property={property}
-            onClick={handlePropertyClick}
-          />
-        ))}
-      </div>
-
-      {/* Modal de detalles */}
-      <PropertyModal 
-        property={selectedProperty}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </div>
   );
 };
