@@ -15,6 +15,9 @@
 // 3. ACTUALIZAR TIPOS DE PROPIEDAD:
 //    - Modifica el array 'propertyTypes'
 
+import React, { useState } from 'react';
+import { SlidersHorizontal, X, Search } from 'lucide-react';
+
 interface Filters {
   type: string;
   location: string;
@@ -29,6 +32,9 @@ interface Filters {
 interface PropertyFiltersProps {
   onFiltersChange: (filters: Filters) => void;
 }
+
+const PropertyFilters: React.FC<PropertyFiltersProps> = ({ onFiltersChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [filters, setFilters] = useState<Filters>({
     type: '',
     location: '',
@@ -82,6 +88,12 @@ interface PropertyFiltersProps {
       bedrooms: '',
       bathrooms: '',
       minArea: '',
+      maxArea: ''
+    };
+    setFilters(clearedFilters);
+    onFiltersChange(clearedFilters);
+  };
+
   return (
     <div className="mb-8">
       {/* 🔘 BOTÓN PARA ABRIR FILTROS */}
@@ -261,4 +273,4 @@ interface PropertyFiltersProps {
   );
 };
 
-export default PropertyGrid;
+export default PropertyFilters;
